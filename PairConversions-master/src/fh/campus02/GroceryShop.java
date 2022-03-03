@@ -16,7 +16,8 @@ public class GroceryShop {
         boolean discount;
         if (drink == true && alcoholic == false) {
             discount = true;
-        } else discount = false;
+        }
+        else discount = false;
         return discount;
     }
 }
