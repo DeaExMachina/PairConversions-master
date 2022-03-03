@@ -3,24 +3,25 @@ package fh.campus02;
 public class Discount {
     public static void main(String[] args) {
         boolean isDog = false;
-        boolean isSenior = false;
-        boolean isStudent = false;
-        boolean discount;
+        boolean isSenior = true;
+        boolean isStudent = true;
+        double discount;
+        double ticketPrice = 2.5;
 
         if (isDog) {
-            discount = true;
+            discount = ticketPrice * 0.2;
         }
         else if (isSenior) {
-            discount = true;
+            discount = ticketPrice * 0.15;
         }
         else if (isStudent) {
-            discount = true;
+            discount = ticketPrice * 0.1;
         }
         else {
-            discount = false;
+            discount = 0;
         }
 
-        System.out.println("I get a discount: " + discount);
+        System.out.println("I saved " + discount + "€ for my " + ticketPrice + "€ ticket.");
 
         }
     }
