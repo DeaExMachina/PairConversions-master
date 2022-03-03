@@ -6,13 +6,18 @@ public class GroceryShop {
         boolean alcoholic = true;
         boolean discount;
 
-        if (drink == true && alcoholic == false) {
-            discount = true;
-        }
-        else discount = false;
+        discount = discountAvailable(drink, alcoholic);
 
         System.out.println("I will get a discount: " + discount);
 
+    }
+
+    public static boolean discountAvailable(boolean drink, boolean alcoholic) {
+        boolean discount;
+        if (drink == true && alcoholic == false) {
+            discount = true;
+        } else discount = false;
+        return discount;
     }
 }
 
