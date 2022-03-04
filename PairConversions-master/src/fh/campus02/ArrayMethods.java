@@ -5,6 +5,8 @@ public class ArrayMethods {
         int[] schachtel = new int[] {2, 3, 5, 7, 11, 13, 17};
 
         printArray(schachtel);
+        System.out.println(containsNumber(3, schachtel));
+
 
 
     }
@@ -17,5 +19,21 @@ public class ArrayMethods {
                 System.out.print(array[i] + ", ");
             }
         }
+   }
+
+   public static boolean containsNumber (int number, int[] array) {
+        boolean isContained = false;
+
+        for (int i = 0; i < array.length; i++) {
+            if (number == array[i]) {
+                isContained = true;
+            }
+            else {
+                isContained = false;
+            }
+        }
+
+        return isContained;
+
    }
 }
