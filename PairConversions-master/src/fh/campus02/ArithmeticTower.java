@@ -2,24 +2,25 @@ package fh.campus02;
 
 public class ArithmeticTower {
     public static void main(String[] args) {
-        int start = 1;
+        int start = 12;
 
-        arithmeticTower (start);
+        arithmeticTower(start);
+
 
 
         }
 
 
-    public static int arithmeticTower(int start)
+    public static void arithmeticTower(int start)
     {
-        start = 1;
-        for (int number = 2; number < 9; number++)
-        {
-            System.out.println(start * number);
-
+        for (int i = 2; i <= 9; i++) {
+            System.out.println(start + " * " + i);
+            start = start * i;
         }
-        int number;
-        int sum = start * number;
-        return sum;
+
+        for (int i = 2; i <= 9; i++) {
+            System.out.println(start + " / " + i);
+            start = start / i;
+        }
     }
 }
