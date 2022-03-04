@@ -9,21 +9,23 @@ public class ScannerVowel {
         String letter = scanner.next();
 
         while (!letter.equals("0")) {
-            if (letter.equals("a") || letter.equals("e") || letter.equals("i") || letter.equals("o") || letter.equals("u")) {
-                System.out.println("Your letter is a vowel!");
-                System.out.println("Enter another letter: ");
-                letter = scanner.next();
-            } else {
-                System.out.println("Your letter is not a vowel!");
+                checkForVowel(letter);
                 System.out.println("Enter another letter: ");
                 letter = scanner.next();
             }
 
-            if (letter.equals("0")) {
                 System.out.println("You entered a 0, the scanner will be closed!");
                 scanner.close();
 
-            }
+
+        }
+
+    public static void checkForVowel (String letter) {
+        if (letter.equals("a") || letter.equals("e") || letter.equals("i") || letter.equals("o") || letter.equals("u")) {
+            System.out.println("Your letter is a vowel!");
+        }
+        else {
+            System.out.println("Your letter is not a vowel!");
 
         }
     }
