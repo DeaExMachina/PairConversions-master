@@ -2,7 +2,7 @@ package fh.campus02;
 
 public class CountDown {
     public static void main(String[] args) {
-        int start = 5;
+        int start = 100;
 
         start = countingDown(start);
 
