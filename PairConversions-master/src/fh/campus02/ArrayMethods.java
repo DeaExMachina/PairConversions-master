@@ -5,7 +5,7 @@ public class ArrayMethods {
         int[] schachtel = new int[] {2, 3, 5, 7, 11, 13, 17};
 
         printArray(schachtel);
-        System.out.println(containsNumber(3, schachtel));
+        System.out.println(containsNumber(11, schachtel));
 
 
 
@@ -26,14 +26,9 @@ public class ArrayMethods {
 
         for (int i = 0; i < array.length; i++) {
             if (number == array[i]) {
-                isContained = true;
-            }
-            else {
-                isContained = false;
+                return true;
             }
         }
-
-        return isContained;
-
+        return false;
    }
 }
