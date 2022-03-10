@@ -1,7 +1,7 @@
 public class TeilerFinden {
     public static void main(String[] args) {
-        int zahl = 150;
-        int teiler = 2;
+        int zahl = 130;
+        int teiler = 4;
 
         while (teiler < zahl) {
             if (zahl %teiler == 0) {
@@ -9,7 +9,5 @@ public class TeilerFinden {
             }
             teiler++;
         }
-
-
     }
 }
