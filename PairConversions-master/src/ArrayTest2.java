@@ -27,5 +27,38 @@ public class ArrayTest2 {
             // nach Ausgabe aller Quartalszahlen einen Zeilenumbruch
             System.out.println();
         }
+
+        System.out.println(verkaufteAnzahlJahr(smartphoneVerkaufszahlen, 0));
+    }
+
+    // Die folgende Methode soll die über das Jahr verkauften Zahlen eines Smartphones zurückliefern
+    // zahlen: unsere Verkaufszahlen
+    // welchesSmartphone: Index, der angibt, an welchem Smartphone wir interessiert sind (0-4)
+    // weitere Anforderung: Wenn ungültiger Wert auf welchesSmartphone wurde, -1 zurückgeben
+
+
+    public static int verkaufteAnzahlJahr (int [][] zahlen, int welchesSmartphone) {
+
+        if (welchesSmartphone < 0 || welchesSmartphone >= zahlen.length) {
+            return -1;
+        }
+
+        int summe = 0;
+        for (int zIndex = 0; zIndex < zahlen[welchesSmartphone].length; zIndex++) {
+            summe += zahlen[welchesSmartphone][zIndex];
+
+        }
+        return summe;
+    }
+    //Die folgende Methode soll uns den Namen des Smartphones liefern, das in einem bestimmten Quartal am erfolgreichsten war
+    // zahlen: unsere Verkaufszahlen
+    // namen: unsere Smartphone-Namen
+    // quartalNr: für welches Quartal soll berechnet werden (1-4), sonst Rückgabewert leerer String
+
+    public static String erfolgreichstesSmartphoneQuartal (int [][] zahlen, String[] namen, int quaralNr) {
+
+
+
+        return ": "; //TODO: durch korrekten Code ersetzen!
     }
 }
