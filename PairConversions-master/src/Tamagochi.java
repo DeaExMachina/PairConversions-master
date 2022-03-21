@@ -1,49 +1,53 @@
 public class Tamagochi {
-    public void main(String[] args) {
 
-        int x = 6;
-        int y = 4;
-        int futterstand = 5;
+    public int x;
+    public int y;
+    public int futterstand;
 
+    void fuettern (int zusatzfutter) {
+        futterstand = futterstand + zusatzfutter;
     }
 
-        public void bewegDich (int schritte, String richtung){
-            int x = 6;
-            int y = 4;
-            int futterstand = 5;
+    public void bewegDich (int schritte, String richtung){
 
-            while (x > 0 && y > 0) {
-                if (richtung == "Links") {
-                    x--1;
-                    futterstand--;
+        //Schritte-Variable als Zähler verwendet
+
+        while (futterstand > 0 && schritte > 0) {
+            if (richtung.equals("links")) {
+                    x--;
                 }
-                else if (richtung == "Rechts") {
+            else if (richtung.equals("rechts")) {
                     x++;
-                    futterstand--;
                 }
-                else if (richtung == "Oben") {
+            else if (richtung.equals("oben")) {
                     y++;
-                    futterstand--;
                 }
-                else if (richtung == "Unten") {
+            else if (richtung.equals("unten")) {
                     y--;
-                    futterstand--;
                 }
 
-                if (futterstand < 1) {
-                    futterstand = futterstand + 5;
-                }
-                x--;
-                y--;
-                futterstand--;
+            schritte--;
+            futterstand--;
+
+//            if (futterstand < 1) {
+//                    fuettern(5);
+//                }
             }
         }
 
-        public void fuettern ( int futterstand){
-            if (futterstand < 1) {
-                futterstand = futterstand + 5;
-            }
-        }
+    public static void main(String[] args) {
+        Tamagochi neon = new Tamagochi();
+        neon.x = 6;
+        neon.y = 4;
+        neon.futterstand = 5;
+
+        neon.bewegDich(5, "links");
+        neon.fuettern(5);
+        neon.bewegDich(1, "links");
+        neon.bewegDich(4, "unten");
+        System.out.println(neon.x + " " + neon.y);
+    }
+
     }
 
 
