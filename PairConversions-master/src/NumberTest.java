@@ -14,8 +14,10 @@ public class NumberTest {
 
         int zehnerstelle = (137 / 10) % 10; //nur bei Int-Division möglich bzw. sinnvoll!
         int zehnerstelle2 = (845 / 10) % 10;
+        int hunderterstelle = 756 / 100; //um die Hunderterstelle herauszufinden
         System.out.println(zehnerstelle);
         System.out.println(zehnerstelle2);
+        System.out.println(hunderterstelle);
 
 
 
