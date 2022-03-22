@@ -7,6 +7,5 @@ public class Konstanten {
         System.out.println(geburtsjahr);
         System.out.println(todesjahr);
 
-
     }
 }
