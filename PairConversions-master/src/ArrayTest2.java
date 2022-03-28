@@ -15,7 +15,7 @@ public class ArrayTest2 {
         //for-each-loop:
         //rechts vom : steht das Array (oder was anderes, das Daten beinhaltet)
         //links daneben eine Laufvariable mit dem Typ des Arrays (beliebig benennbar)
-        for (String smartphone : smartPhoneNamen) {
+        for (String smartphone : smartPhoneNamen) { //for-each-Schleife!
             System.out.println(smartphone);
         }
 
@@ -33,6 +33,11 @@ public class ArrayTest2 {
         System.out.println(verkaufteAnzahlJahr(smartphoneVerkaufszahlen, 0));
 
         //System.out.println(Arrays.toString(erfolgreichstesSmartphoneQuartal(2500, "Huawei", 1)));
+
+        String sName = erfolgreichstesSmartphoneQuartal(smartphoneVerkaufszahlen, smartPhoneNamen, 4);
+        System.out.println(sName);
+        sName = erfolgreichstesSmartphoneQuartal(smartphoneVerkaufszahlen, smartPhoneNamen, 3);
+
     }
 
     // Die folgende Methode soll die über das Jahr verkauften Zahlen eines Smartphones zurückliefern
@@ -62,13 +67,29 @@ public class ArrayTest2 {
     public static String erfolgreichstesSmartphoneQuartal(int[][] zahlen, String[] smartPhoneNamen, int quartalNr) {
 
         for (int index = 0; index < zahlen[quartalNr].length; index++) {
-            if (quartalNr >= 5) {
-                return null;
+            if (quartalNr >= 5 || quartalNr < 1) {
+                return "";
             }
 
+            //Spalten bleiben immer gleich!
+            //zahlen[][quartalNr - 1]
+            //nehmen wir an: 1. Zahl = größte Zahl
+            //zugleich gehen wir davon aus, dass es immer zumindest eine Zahl im Array gibt
+            int idxGr = 0;
+            int zahlGr = zahlen[0][quartalNr + 1];
+
+            for (int z = 1; z < zahlen.length; z++) {
+                if(zahlen[z][quartalNr + 1] > zahlGr) {
+                    zahlGr = zahlen[z][quartalNr + 1];
+                    idxGr = z;
+                }
+            }
+            //nach Ende der Schleife ist auf zahlGr größe Zahl gespeichert, auf idxGr der Index der größten Zahl
+
+            return smartPhoneNamen[idxGr];
         }
 
-            return "am erfolgreichsten war in " + quartalNr + "das Smartphone " + smartPhoneNamen; //TODO: durch korrekten Code ersetzen!
+            return "am erfolgreichsten war in " + quartalNr + "das Smartphone " + smartPhoneNamen;
 
 
     }
