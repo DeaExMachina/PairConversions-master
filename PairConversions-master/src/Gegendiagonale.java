@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Gegendiagonale {
-    public static int summeGegendiagonale (int array1 [][]) {
+    public static int summeGegendiagonale (int [][] array1 ) {
         int diagonale = 0;
 
         for (int i = 0; i < array1.length; i++) {
